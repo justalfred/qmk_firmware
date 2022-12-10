@@ -1,0 +1,22 @@
+{
+    "keyboard_name": "ANO Scroll Wheel",
+    "manufacturer": "Adafruit",
+    "url": "https://learn.adafruit.com/ano-rotary-encoder",
+    "maintainer": "justalfred",
+    "usb": {
+        "vid": "0x239A",
+        "pid": "0x0109",
+        "device_version": "0.0.1"
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label":"center", "x":1, "y":1},
+                {"label":"up", "x":1, "y":0},
+                {"label":"down", "x":1, "y":2},
+                {"label":"left", "x":0, "y":1},
+                {"label":"right", "x":2, "y":1}
+            ]
+        }
+    }
+}
