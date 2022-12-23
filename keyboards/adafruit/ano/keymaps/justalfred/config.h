@@ -30,3 +30,8 @@ for more options.
 #define TAPPING_TERM 500
 
 #define MOUSEKEY_MOVE_DELTA 1
+
+#ifdef RGBLIGHT_ENABLE
+    #define RGBLIGHT_EFFECT_BREATHING
+    #define RGBLIGHT_EFFECT_ALTERNATING
+#endif
