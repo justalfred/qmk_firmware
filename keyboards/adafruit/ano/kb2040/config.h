@@ -16,11 +16,19 @@
 
 #pragma once
 
-#define MATRIX_ROWS 3
-#define MATRIX_COLS 3
+#include "config_common.h"
 
-#ifdef RGBLIGHT_ENABLE
-#define RGBLED_NUM 1
-#endif
+/* Keyboard Matrix Assignments */
+// clang-format off
+#define DIRECT_PINS { \
+    { NO_PIN, GP2, NO_PIN }, \
+    {    GP5, GP6, GP3    }, \
+    { NO_PIN, GP4, GP11   }  \
+}
+// clang-format on
 
-#define DEBOUNCE 5
+/* Encoders */
+#define ENCODERS_PAD_A { GP9 }
+#define ENCODERS_PAD_B { GP8 }
+
+#define ENCODER_RESOLUTIONS { 2 }

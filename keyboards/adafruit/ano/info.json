@@ -1,5 +1,4 @@
 {
-    "keyboard_name": "ANO Scroll Wheel",
     "manufacturer": "Adafruit",
     "url": "https://learn.adafruit.com/ano-rotary-encoder",
     "maintainer": "justalfred",
@@ -15,7 +14,8 @@
                 {"label":"up", "x":1, "y":0},
                 {"label":"down", "x":1, "y":2},
                 {"label":"left", "x":0, "y":1},
-                {"label":"right", "x":2, "y":1}
+                {"label":"right", "x":2, "y":1},
+                {"label":"MCU button", "x":2, "y":2}
             ]
         }
     }

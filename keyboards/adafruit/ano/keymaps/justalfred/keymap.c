@@ -72,22 +72,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NORTH] = LAYOUT(
            KC_PGUP,
   KC_LEFT, TD_X,    KC_RGHT,
-           KC_PGDN
+           KC_PGDN, RGB_TOG
 ),
 [_EAST] = LAYOUT(
            KC_LEFT,
   KC_PGDN, TD_X,    KC_PGUP,
-           KC_RGHT
+           KC_RGHT, RGB_TOG
 ),
 [_SOUTH] = LAYOUT(
            KC_PGDN,
   KC_RGHT, TD_X,    KC_LEFT,
-           KC_PGUP
+           KC_PGUP, RGB_TOG
 ),
 [_WEST] = LAYOUT(
            KC_RGHT,
   KC_PGUP, TD_X,    KC_PGDN,
-           KC_LEFT
+           KC_LEFT, RGB_TOG
 )
 };
 
