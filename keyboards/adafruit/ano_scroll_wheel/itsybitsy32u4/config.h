@@ -14,26 +14,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #pragma once
 
-#define LAYER_STATE_8BIT
+#include "config_common.h"
 
-#ifdef TAPPING_TERM
-    #undef TAPPING_TERM
-#endif
-#define TAPPING_TERM 500
+/* Keyboard Matrix Assignments */
+// clang-format off
+#define DIRECT_PINS { \
+    { NO_PIN, F7, NO_PIN }, \
+    {     F4, F1, F6     }, \
+    { NO_PIN, F5, E6     }  \
+}
+// clang-format on
 
-#define MOUSEKEY_MOVE_DELTA 1
+/* Encoders */
+#define ENCODERS_PAD_A { B2 }
+#define ENCODERS_PAD_B { B1 }
 
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_ALTERNATING
-#endif
-
-/* Joystick */
-#define ANALOG_JOYSTICK_X_AXIS_PIN B6
-#define ANALOG_JOYSTICK_Y_AXIS_PIN B5
-#define POINTING_DEVICE_INVERT_X
-#define POINTING_DEVICE_INVERT_Y
-#define ANALOG_JOYSTICK_SPEED_REGULATOR 30
+#define ENCODER_RESOLUTIONS { 2 }

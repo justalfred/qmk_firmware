@@ -1,0 +1,13 @@
+{
+    "keyboard_name": "ANO Scroll Wheel KB2040",
+    "development_board": "kb2040",
+    "features": {
+        "backlight": true
+    },
+    "backlight": {
+        "breathing": true,
+        "breathing_period": 2,
+        "levels": 10,
+        "pin": "C7"
+    }
+}
