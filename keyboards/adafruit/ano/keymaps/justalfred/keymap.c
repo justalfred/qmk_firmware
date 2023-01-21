@@ -36,13 +36,16 @@ typedef struct {
 td_state_t cur_dance(qk_tap_dance_state_t *state);
 void x_finished(qk_tap_dance_state_t *state, void *user_data);
 void x_reset(qk_tap_dance_state_t *state, void *user_data);
+void m_finished(qk_tap_dance_state_t *state, void *user_data);
+void m_reset(qk_tap_dance_state_t *state, void *user_data);
 
 enum {
     X_CTL,
-    SOME_OTHER_DANCE
+    M_CTL
 };
 
 #define TD_X   TD(X_CTL)
+#define TD_M   TD(M_CTL)
 
 enum sofle_layers {
     _NORTH,
@@ -72,22 +75,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NORTH] = LAYOUT(
            KC_PGUP,
   KC_LEFT, TD_X,    KC_RGHT,
-           KC_PGDN, KC_BTN1
+           KC_PGDN, TD_M
 ),
 [_EAST] = LAYOUT(
            KC_LEFT,
   KC_PGDN, TD_X,    KC_PGUP,
-           KC_RGHT, KC_BTN1
+           KC_RGHT, TD_M
 ),
 [_SOUTH] = LAYOUT(
            KC_PGDN,
   KC_RGHT, TD_X,    KC_LEFT,
-           KC_PGUP, KC_BTN1
+           KC_PGUP, TD_M
 ),
 [_WEST] = LAYOUT(
            KC_RGHT,
   KC_PGUP, TD_X,    KC_PGDN,
-           KC_LEFT, KC_BTN1
+           KC_LEFT, TD_M
 )
 };
 
@@ -158,16 +161,16 @@ td_state_t cur_dance(qk_tap_dance_state_t *state) {
     } else return TD_UNKNOWN;
 }
 
-// Create an instance of 'td_tap_t' for the 'x' tap dance.
-static td_tap_t xtap_state = {
+// Create an instance of 'td_tap_t'
+static td_tap_t tap_state = {
     .is_press_action = true,
     .state = TD_NONE
 };
 
 void x_finished(qk_tap_dance_state_t *state, void *user_data) {
-    xtap_state.state = cur_dance(state);
+    tap_state.state = cur_dance(state);
     static deferred_token autoscroll_token = INVALID_DEFERRED_TOKEN;
-    switch (xtap_state.state) {
+    switch (tap_state.state) {
         case TD_SINGLE_TAP:
             if (is_on_autoscroll) {
                 cancel_deferred_exec(autoscroll_token);
@@ -198,7 +201,7 @@ void x_finished(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 void x_reset(qk_tap_dance_state_t *state, void *user_data) {
-    switch (xtap_state.state) {
+    switch (tap_state.state) {
         case TD_SINGLE_HOLD:
             is_on_set_autoscroll = false;
             break;
@@ -212,9 +215,33 @@ void x_reset(qk_tap_dance_state_t *state, void *user_data) {
             break;
         default: break;
     }
-    xtap_state.state = TD_NONE;
+    tap_state.state = TD_NONE;
+}
+
+void m_finished(qk_tap_dance_state_t *state, void *user_data) {
+    tap_state.state = cur_dance(state);
+    switch (tap_state.state) {
+        case TD_SINGLE_TAP:
+            tap_code16(KC_BTN1);
+            break;
+        case TD_SINGLE_HOLD:
+            tap_code16(host_keyboard_led_state().num_lock ? A(KC_LEFT) : G(KC_LEFT));
+            break;
+        case TD_DOUBLE_TAP:
+            tap_code(KC_ESC);
+            break;
+        case TD_DOUBLE_HOLD:
+            tap_code16(host_keyboard_led_state().num_lock ? C(KC_W) : G(KC_W));
+            break;
+        default: break;
+    }
+}
+
+void m_reset(qk_tap_dance_state_t *state, void *user_data) {
+    tap_state.state = TD_NONE;
 }
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [X_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, x_finished, x_reset)
+    [X_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, x_finished, x_reset),
+    [M_CTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, m_finished, m_reset)
 };
