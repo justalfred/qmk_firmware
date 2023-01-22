@@ -114,7 +114,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     if (get_mods() & MOD_BIT(KC_RCMD)) {
         clockwise ? tap_code(KC_TAB) : tap_code16(S(KC_TAB));
     } else if (is_wheel_mode) {
-	register_code(KC_RCMD);
+        register_code(KC_RCMD);
         SEND_STRING(SS_DELAY(50));
         clockwise ? tap_code(KC_WH_U) : tap_code(KC_WH_D);
         SEND_STRING(SS_DELAY(50));
@@ -149,8 +149,8 @@ void x_finished(qk_tap_dance_state_t *state, void *user_data) {
             tap_code16(G(KC_0));
             break;
         case TD_SINGLE_HOLD:
-	    register_code(KC_RCMD);
-	    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 3);
+            register_code(KC_RCMD);
+            rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 3);
             break;
         case TD_DOUBLE_TAP:
             is_wheel_mode = !is_wheel_mode;
@@ -165,8 +165,8 @@ void x_finished(qk_tap_dance_state_t *state, void *user_data) {
 void x_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (xtap_state.state) {
         case TD_SINGLE_HOLD:
-	    unregister_code(KC_RCMD);
-	    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+            unregister_code(KC_RCMD);
+            rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
         default: break;
     }
     xtap_state.state = TD_NONE;
