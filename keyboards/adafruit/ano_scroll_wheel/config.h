@@ -19,8 +19,4 @@
 #define MATRIX_ROWS 3
 #define MATRIX_COLS 3
 
-#ifdef RGBLIGHT_ENABLE
-#define RGBLED_NUM 1
-#endif
-
 #define DEBOUNCE 5

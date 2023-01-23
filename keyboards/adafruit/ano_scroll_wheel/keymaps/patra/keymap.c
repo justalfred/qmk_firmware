@@ -69,22 +69,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *               |LED PWR|
  *               '-------'
  */
-[_NORTH] = LAYOUT(
+[_NORTH] = LAYOUT_one_btn(
            RGB_HUI,
     TAB_L, TD_X,    TAB_R,
            RGB_HUD, RGB_TOG
 ),
-[_EAST] = LAYOUT(
+[_EAST] = LAYOUT_one_btn(
            TAB_L,
   RGB_HUD, TD_X,    RGB_HUI,
            TAB_R,   RGB_TOG
 ),
-[_SOUTH] = LAYOUT(
+[_SOUTH] = LAYOUT_one_btn(
            RGB_HUD,
     TAB_R, TD_X,    TAB_L,
            RGB_HUI, RGB_TOG
 ),
-[_WEST] = LAYOUT(
+[_WEST] = LAYOUT_one_btn(
            TAB_R,
   RGB_HUI, TD_X,    RGB_HUD,
            TAB_L,   RGB_TOG

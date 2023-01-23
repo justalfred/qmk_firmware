@@ -17,18 +17,3 @@
 #pragma once
 
 #include "quantum.h"
-
-#define ___ KC_NO
-
-// clang-format off
- #define LAYOUT(  \
-        K01,      \
-   K10, K11, K12, \
-        K21, Kbt  \
- ) \
- { \
-   { ___, K01, ___ }, \
-   { K10, K11, K12 }, \
-   { ___, K21, Kbt }  \
- }
-// clang-format on

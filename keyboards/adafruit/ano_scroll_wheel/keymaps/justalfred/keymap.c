@@ -72,22 +72,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *  \     | pgdn |     /   triple tap to change orientation
  *   `----------------'    triple tap, hold, and turn wheel for alt-tab
  */
-[_NORTH] = LAYOUT(
+[_NORTH] = LAYOUT_one_btn(
            KC_PGUP,
   KC_LEFT, TD_X,    KC_RGHT,
            KC_PGDN, TD_M
 ),
-[_EAST] = LAYOUT(
+[_EAST] = LAYOUT_one_btn(
            KC_LEFT,
   KC_PGDN, TD_X,    KC_PGUP,
            KC_RGHT, TD_M
 ),
-[_SOUTH] = LAYOUT(
+[_SOUTH] = LAYOUT_one_btn(
            KC_PGDN,
   KC_RGHT, TD_X,    KC_LEFT,
            KC_PGUP, TD_M
 ),
-[_WEST] = LAYOUT(
+[_WEST] = LAYOUT_one_btn(
            KC_RGHT,
   KC_PGUP, TD_X,    KC_PGDN,
            KC_LEFT, TD_M

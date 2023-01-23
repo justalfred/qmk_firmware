@@ -17,18 +17,3 @@
 #pragma once
 
 #include "config_common.h"
-
-/* Keyboard Matrix Assignments */
-// clang-format off
-#define DIRECT_PINS { \
-    { NO_PIN, F7, NO_PIN }, \
-    {     F4, F1, F6     }, \
-    { NO_PIN, F5, E6     }  \
-}
-// clang-format on
-
-/* Encoders */
-#define ENCODERS_PAD_A { B2 }
-#define ENCODERS_PAD_B { B1 }
-
-#define ENCODER_RESOLUTIONS { 2 }

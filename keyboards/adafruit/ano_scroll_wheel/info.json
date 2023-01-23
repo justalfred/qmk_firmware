@@ -3,19 +3,26 @@
     "url": "https://learn.adafruit.com/ano-rotary-encoder",
     "maintainer": "justalfred",
     "usb": {
-        "vid": "0x239A",
-        "pid": "0x0109",
-        "device_version": "0.0.1"
+        "vid": "0x239A"
     },
     "layouts": {
-        "LAYOUT": {
+        "LAYOUT_basic": {
             "layout": [
-                {"label":"center", "x":1, "y":1},
-                {"label":"up", "x":1, "y":0},
-                {"label":"down", "x":1, "y":2},
-                {"label":"left", "x":0, "y":1},
-                {"label":"right", "x":2, "y":1},
-                {"label":"MCU button", "x":2, "y":2}
+                {"label":"up", "matrix": [0, 1], "x":1, "y":0},
+                {"label":"left", "matrix": [1, 0], "x":0, "y":1},
+                {"label":"center", "matrix": [1, 1], "x":1, "y":1},
+                {"label":"right", "matrix": [1, 2], "x":2, "y":1},
+                {"label":"down", "matrix": [2, 1], "x":1, "y":2}
+            ]
+        },
+        "LAYOUT_one_btn": {
+            "layout": [
+                {"label":"up", "matrix": [0, 1], "x":1, "y":0},
+                {"label":"left", "matrix": [1, 0], "x":0, "y":1},
+                {"label":"center", "matrix": [1, 1], "x":1, "y":1},
+                {"label":"right", "matrix": [1, 2], "x":2, "y":1},
+                {"label":"down", "matrix": [2, 1], "x":1, "y":2},
+                {"label":"button", "matrix": [2, 2], "x":2.25, "y":2.25}
             ]
         }
     }

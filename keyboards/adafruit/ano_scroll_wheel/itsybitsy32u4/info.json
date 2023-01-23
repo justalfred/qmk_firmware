@@ -1,6 +1,21 @@
 {
-    "keyboard_name": "ANO Scroll Wheel KB2040",
-    "development_board": "kb2040",
+    "keyboard_name": "ANO Scroll Wheel Itsy Bitsy 32u4",
+    "usb": {
+        "pid": "0x0235",
+        "device_version": "0.0.1"
+    },
+    "matrix_pins": {
+        "direct": [
+            [null, "F7", null],
+            ["F4", "F1", "F6"],
+            [null, "F5", "E6"]
+        ]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "B2", "pin_b": "B1", "resolution": 2 }
+        ]
+    },
     "features": {
         "backlight": true
     },
