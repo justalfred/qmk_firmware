@@ -18,14 +18,3 @@
 #pragma once
 
 #define LAYER_STATE_8BIT
-
-#ifdef TAPPING_TERM
-    #undef TAPPING_TERM
-#endif
-#define TAPPING_TERM 300
-
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_HUE_STEP 4
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_ALTERNATING
-#endif

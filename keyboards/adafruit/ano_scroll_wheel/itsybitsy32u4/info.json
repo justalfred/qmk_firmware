@@ -4,6 +4,12 @@
         "pid": "0x0235",
         "device_version": "0.0.1"
     },
+    "processor": "atmega32u4",
+    "bootloader": "caterina",
+    "features": {
+        "backlight": true,
+        "rgblight": false
+    },
     "matrix_pins": {
         "direct": [
             [null, "F7", null],
@@ -15,9 +21,6 @@
         "rotary": [
             { "pin_a": "B2", "pin_b": "B1", "resolution": 2 }
         ]
-    },
-    "features": {
-        "backlight": true
     },
     "backlight": {
         "breathing": true,

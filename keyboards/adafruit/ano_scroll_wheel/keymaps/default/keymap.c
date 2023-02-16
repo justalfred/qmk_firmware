@@ -42,7 +42,7 @@ enum {
 
 #define TD_X   TD(X_CTL)
 
-enum sofle_layers {
+enum arrow_layers {
     _NORTH,
     _EAST,
     _SOUTH,
@@ -156,7 +156,7 @@ void x_finished(qk_tap_dance_state_t *state, void *user_data) {
             is_wheel_mode = !is_wheel_mode;
             break;
         case TD_TRIPLE_TAP:
-            set_single_persistent_default_layer((get_highest_layer(layer_state) + 1) % 4);
+            layer_move((get_highest_layer(layer_state) + 1) % 4);
             break;
         default: break;
     }

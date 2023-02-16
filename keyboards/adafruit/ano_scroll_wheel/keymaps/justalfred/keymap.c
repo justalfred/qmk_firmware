@@ -14,6 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * FOR USE WITH ITSYBITSY32U4
+ */
 
 #include QMK_KEYBOARD_H
 
@@ -47,7 +50,7 @@ enum {
 #define TD_X   TD(X_CTL)
 #define TD_M   TD(M_CTL)
 
-enum sofle_layers {
+enum arrow_layers {
     _NORTH,
     _EAST,
     _SOUTH,

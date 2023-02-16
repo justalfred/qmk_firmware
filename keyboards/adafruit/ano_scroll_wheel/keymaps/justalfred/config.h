@@ -19,17 +19,7 @@
 
 #define LAYER_STATE_8BIT
 
-#ifdef TAPPING_TERM
-    #undef TAPPING_TERM
-#endif
-#define TAPPING_TERM 500
-
 #define MOUSEKEY_MOVE_DELTA 1
-
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_ALTERNATING
-#endif
 
 /* Joystick */
 #define ANALOG_JOYSTICK_X_AXIS_PIN B6

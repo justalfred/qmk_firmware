@@ -5,6 +5,9 @@
         "device_version": "0.0.1"
     },
     "development_board": "kb2040",
+    "features": {
+        "rgblight": true
+    },
     "matrix_pins": {
         "direct": [
             [null, "GP2", null],
@@ -19,6 +22,15 @@
     },
     "rgblight": {
         "led_count": 1,
-        "pin": "GP17"
+        "pin": "GP17",
+        "hue_steps": 4,
+        "animations": {
+            "alternating": true,
+            "breathing": true
+        },
+        "layers": {
+            "enabled": true,
+            "blink": true
+        }
     }
 }

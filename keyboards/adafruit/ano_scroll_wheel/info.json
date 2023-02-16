@@ -5,6 +5,21 @@
     "usb": {
         "vid": "0x239A"
     },
+    "features": {
+        "bootmagic": false,
+        "command": false,
+        "console": false,
+        "encoder": true,
+        "mousekey": true,
+        "tap_dance": true,
+        "deferred_exec": true
+    },
+    "build": {
+        "lto": true
+    },
+    "tapping": {
+        "term": 500
+    },
     "layouts": {
         "LAYOUT_basic": {
             "layout": [
