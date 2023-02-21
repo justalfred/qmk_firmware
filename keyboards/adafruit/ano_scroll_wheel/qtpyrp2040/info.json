@@ -1,0 +1,37 @@
+{
+    "keyboard_name": "ANO Scroll Wheel QT Py RP2040",
+    "usb": {
+        "pid": "0x0236",
+        "device_version": "0.0.1"
+    },
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "features": {
+        "rgblight": true
+    },
+    "matrix_pins": {
+        "direct": [
+            [null, "GP26", null],
+            ["GP20", "GP3", "GP24"],
+            [null, "GP25", "GP21"]
+        ]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "GP6", "pin_b": "GP4", "resolution": 2 }
+        ]
+    },
+    "rgblight": {
+        "led_count": 1,
+        "pin": "GP12",
+        "hue_steps": 4,
+        "animations": {
+            "alternating": true,
+            "breathing": true
+        },
+        "layers": {
+            "enabled": true,
+            "blink": true
+        }
+    }
+}
