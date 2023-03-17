@@ -39,6 +39,17 @@
                 {"label":"down", "matrix": [2, 1], "x":1, "y":2},
                 {"label":"button", "matrix": [2, 2], "x":2.25, "y":2.25}
             ]
+        },
+        "LAYOUT_two_btn": {
+            "layout": [
+                {"label":"up", "matrix": [0, 1], "x":1, "y":0.25},
+                {"label":"button2", "matrix": [0, 2], "x":2.25, "y":0},
+                {"label":"left", "matrix": [1, 0], "x":0, "y":1.25},
+                {"label":"center", "matrix": [1, 1], "x":1, "y":1.25},
+                {"label":"right", "matrix": [1, 2], "x":2, "y":1.25},
+                {"label":"down", "matrix": [2, 1], "x":1, "y":2.25},
+                {"label":"button1", "matrix": [2, 2], "x":2.25, "y":2.25}
+            ]
         }
     }
 }
